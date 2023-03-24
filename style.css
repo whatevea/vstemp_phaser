@@ -1,10 +1,8 @@
-html,body{
-    margin:0;
-    padding:0;
-    width: 80%;
+#game-container {
     height: 100%;
 }
-@font-face {
-    font-family: evilFont;
-    src: url('assets/font.ttf');
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }

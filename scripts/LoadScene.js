@@ -1,0 +1,74 @@
+var sceneConfig = {
+    key: 'LoadScene',
+    pack: {
+        files: [{
+            type: 'plugin',
+            key: 'rexwebfontloaderplugin',
+            url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexwebfontloaderplugin.min.js',
+            start: true
+        }]
+    }
+};
+
+export default class LoadScene extends Phaser.Scene{
+constructor(){
+    super(sceneConfig);
+}
+preload(){
+//loading fonts
+this.plugins.get('rexwebfontloaderplugin').addToScene(this);
+
+var config = {
+    google: {
+        families: ['Offside']
+    }
+};
+
+this.load.rexWebFont(config);
+this.load.image("border","/assets/border.png");
+this.load.image("logo","/assets/logo.png");
+this.load.image("blue","/assets/blue.png");
+
+this.load.image("ball","/assets/pong.png");
+this.load.image("board","/assets/board.png");
+this.load.image("bg","/assets/bg.png")
+this.load.spritesheet("paddle","/assets/g3837.png",{
+    frameWidth:200,
+    frameHeight:73
+})
+//loading audio
+this.load.audio("spring1",'assets/spring1.mp3');
+this.load.audio("spring2",'assets/spring2.mp3');
+this.load.audio("spring3",'assets/spring3.mp3');
+
+}
+create(){
+
+let loadingtext= this.add.text(203, 625, 'Loading ... ', {
+        fontSize: '64px'
+    });       
+
+    //phaser animation simple code
+    this.anims.create({
+
+        key:"bounce",
+
+        frames:this.anims.generateFrameNumbers('paddle',{frames:[0,1,2,1,0]}),
+
+        frameRate:11,
+
+        repeat:0
+
+    });
+    this.scene.start("GameScene");
+
+}
+update(){
+
+}
+
+
+}
+
+
+
