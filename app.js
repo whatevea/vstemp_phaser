@@ -4,7 +4,6 @@ const game = new Phaser.Game(gameConfig);
 
 //global 
  window.enableDrag=(obj)=>{
-    console.log(obj.scene)
     let scene=obj.scene;
       obj.setInteractive(); 
     scene.input.setDraggable(obj); 

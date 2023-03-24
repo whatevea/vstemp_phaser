@@ -4,7 +4,7 @@ export default function soundPlayer(scene,sound){
         
     }
     if (scene.canPlaySound && sound==="sideBounce"){    
-        play();
+        scene.sidebounce.play();
         
     }
 

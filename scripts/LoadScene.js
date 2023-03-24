@@ -25,13 +25,17 @@ var config = {
 };
 
 this.load.rexWebFont(config);
-this.load.image("border","/assets/border.png");
+this.load.image("block","/assets/block.png");
 this.load.image("logo","/assets/logo.png");
 this.load.image("blue","/assets/blue.png");
-
+this.load.image("toast","/assets/toast.png");
 this.load.image("ball","/assets/pong.png");
 this.load.image("board","/assets/board.png");
 this.load.image("bg","/assets/bg.png")
+this.load.spritesheet("blocks","assets/blocks.png",{
+    frameHeight:50,
+    frameWidth:70
+})
 this.load.spritesheet("paddle","/assets/g3837.png",{
     frameWidth:200,
     frameHeight:73
@@ -40,6 +44,7 @@ this.load.spritesheet("paddle","/assets/g3837.png",{
 this.load.audio("spring1",'assets/spring1.mp3');
 this.load.audio("spring2",'assets/spring2.mp3');
 this.load.audio("spring3",'assets/spring3.mp3');
+this.load.audio("sidebounce",'assets/sidebounce.mp3');
 
 }
 create(){
