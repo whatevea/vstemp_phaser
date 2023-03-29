@@ -32,9 +32,9 @@ this.load.image("toast","/assets/toast.png");
 this.load.image("ball","/assets/pong.png");
 this.load.image("board","/assets/board.png");
 this.load.image("bg","/assets/bg.png")
-this.load.spritesheet("blocks","assets/blocks.png",{
+this.load.spritesheet("blocks","assets/6blocks.png",{
     frameHeight:50,
-    frameWidth:70
+    frameWidth:69.5
 })
 this.load.spritesheet("paddle","/assets/g3837.png",{
     frameWidth:200,

@@ -9,7 +9,7 @@ let centerY=scene.cameras.main.centerY;
 let centerX=scene.cameras.main.centerX;
 let paddle1=scene.physics.add.sprite(360,1280-paddleOffset,"paddle");
 let paddle2=scene.physics.add.sprite(360,paddleOffset,"paddle").setFlipY(true);
-let ball=scene.physics.add.image(centerX,centerY,"ball").setVelocity(111,111).setBounce(vars.ballBounceRate);
+let ball=scene.physics.add.image(centerX,centerY,"ball").setVelocity(vars.initialBallVelocity).setBounce(vars.ballBounceRate);
 ball.setScale(vars.ballScale);
 ball.setCircle(ball.width/2);
 
