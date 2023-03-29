@@ -1,5 +1,5 @@
-import Blocks from "./Blocks.js";
-import vars from "../scripts/datas.js";
+import Blocks from "../../objects/Blocks.js";
+import vars from "../datas.js";
 export default class Toast{
 
 constructor(scene){
@@ -12,6 +12,7 @@ constructor(scene){
         })
     this.redBlock= new Blocks(scene,"red",vars.dragBlockPos.red.x,vars.dragBlockPos.red.y);
     this.greenBlock= new Blocks(scene,"green",vars.dragBlockPos.green.x,vars.dragBlockPos.green.y);    
+    
     this.container=scene.add.container(0,scene.game.config.width,[bg1,text,this.redBlock.block,this.greenBlock.block]);
     this.container.alpha=0;
     this.redBlock.handleDrag();

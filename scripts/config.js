@@ -2,6 +2,7 @@
 import  LoadScene  from "./LoadScene.js";
 import MainScreen from "./MainScreen.js";
 import GameScene from "./GameScene.js";
+import PlayScene from "./PlayScene.js";
 const config = {
     customData:{
         canPlaySound:true
@@ -20,7 +21,7 @@ const config = {
           debug: true
       }
   },
-scene:[LoadScene,MainScreen,GameScene]
+scene:[LoadScene,MainScreen,GameScene,PlayScene]
 }
 
 export default config;

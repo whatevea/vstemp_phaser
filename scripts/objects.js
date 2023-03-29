@@ -42,7 +42,6 @@ else{
 //play diff sound
 soundPlayer(scene,"sideBounce");
 
-console.log(radiusDistanceVector);
 //set custom velocity 
 ball.body.setAngularVelocity(6*radiusDistanceVector); //rotate ball code
 ball.setVelocityX(radiusDistanceVector*xDifficulty); //4 is the difficulty rate

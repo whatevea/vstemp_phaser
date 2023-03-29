@@ -25,6 +25,7 @@ var config = {
 };
 
 this.load.rexWebFont(config);
+this.load.spritesheet("explode","assets/explode.png",{frameWidth:148,frameHeight:148})
 this.load.image("block","/assets/block.png");
 this.load.image("logo","/assets/logo.png");
 this.load.image("blue","/assets/blue.png");
@@ -65,7 +66,25 @@ let loadingtext= this.add.text(203, 625, 'Loading ... ', {
         repeat:0
 
     });
-    this.scene.start("GameScene");
+
+    this.anims.create({
+        key:"redBoom",
+        frames:this.anims.generateFrameNumbers('explode',{frames:[0,1,2,3,4,5,6,7]},),
+  
+              frameRate:27,
+  
+              
+      })
+      this.anims.create({
+        key:"greenBoom",
+        frames:this.anims.generateFrameNumbers('explode',{frames:[42,43,44,45,46,47,48]},),
+  
+              frameRate:27,
+  
+              
+      })
+
+    this.scene.start("MainScreen");
 
 }
 update(){
