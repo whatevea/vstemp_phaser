@@ -34,6 +34,7 @@ let centerOffsetCheck=(paddle.width/2)*vars.centerHitPercent/100;
 if(radiusDistance<=centerOffsetCheck){
 //colldided on center
 //play animation and sound
+    ball.body.setVelocityY(ball.body.velocity.y*yDifficulty);
     paddle.play("bounce");
    soundPlayer(scene,"centerBounce");
 }
@@ -43,7 +44,7 @@ else{
 soundPlayer(scene,"sideBounce");
 
 //set custom velocity 
-ball.body.setAngularVelocity(6*radiusDistanceVector); //rotate ball code
+ball.body.setAngularVelocity(5*radiusDistanceVector); //rotate ball code
 ball.setVelocityX(radiusDistanceVector*xDifficulty); //4 is the difficulty rate
 
 }
