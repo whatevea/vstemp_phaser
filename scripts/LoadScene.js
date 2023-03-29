@@ -37,7 +37,7 @@ this.load.spritesheet("blocks","assets/6blocks.png",{
     frameHeight:50,
     frameWidth:69.5
 })
-this.load.spritesheet("paddle","/assets/g3837.png",{
+this.load.spritesheet("paddle","assets/g3837.png",{
     frameWidth:200,
     frameHeight:73
 })
