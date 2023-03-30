@@ -45,7 +45,9 @@ else{
 soundPlayer(scene,"sideBounce");
 
 //set custom velocity 
-ball.body.setAngularVelocity(5*radiusDistanceVector); //rotate ball code
+let hitAngle = Phaser.Math.Angle.Between(ball.x, ball.y, paddle.x, paddle.y);
+// set the rotation of the ball to the hit angle
+ball.setRotation(hitAngle*radiusDistanceVector);
 ball.setVelocityX(radiusDistanceVector*xDifficulty); //4 is the difficulty rate
 
 }
