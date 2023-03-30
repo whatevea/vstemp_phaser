@@ -46,6 +46,7 @@ this.load.audio("spring1",'assets/spring1.mp3');
 this.load.audio("spring2",'assets/spring2.mp3');
 this.load.audio("spring3",'assets/spring3.mp3');
 this.load.audio("sidebounce",'assets/sidebounce.mp3');
+this.load.audio("blast",'assets/blast.mp3',{instances:5});
 
 }
 create(){

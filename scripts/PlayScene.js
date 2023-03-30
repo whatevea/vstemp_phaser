@@ -2,6 +2,7 @@ import { renderBlocks } from "../objects/blocksData.js";
 import Score from "../objects/Score.js";
 import vars from "./datas.js";
 import renderGameObjs from "./objects.js";
+import { initSounds } from "./soundPlayer.js";
 export default class PlayScene extends Phaser.Scene
 {
 constructor(){
@@ -12,12 +13,17 @@ init(data){
 }
 
 create(){
+    //add sounds to scene
+    initSounds(this,true);
+    //render ball and paddles
 let objs=renderGameObjs(this);
 this.ball=objs[0];
-console.log(objs);
-console.log(this.ball);
+
+//render score from previous data
 this.redScore= new Score(this,498, 1210,false,this.data.score.red);
 this.greenScore= new Score(this,227,64,true,this.data.score.green);
+
+//render blocks from data
 renderBlocks(this,this.data);
 setTimeout(() => {
     this.ball.setVelocity(vars.finalBallVelocity);

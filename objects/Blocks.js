@@ -1,4 +1,5 @@
 import vars from "../scripts/datas.js";
+import { soundPlayer } from "../scripts/soundPlayer.js";
 import handlesDrag from "../scripts/ui/blockDragHandler.js";
 
 export default class Blocks {
@@ -35,6 +36,7 @@ export default class Blocks {
 
         this.block.body.immovable=true;
         this.scene.physics.add.collider(ball, this.block,  ()=> {
+            soundPlayer(this.scene,"blast")
             this.blast();
             this.block.destroy();
         })

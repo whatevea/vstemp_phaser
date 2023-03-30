@@ -16,7 +16,7 @@ export default class Score{
             fontSize: '45px',
             color:"#fff",
         })
-        this.gameobj.setAlpha(0.2);
+        this.gameobj.setAlpha(0.3);
         if (this.flip){
             this.gameobj.setAngle(180)
         }

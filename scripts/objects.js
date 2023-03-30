@@ -1,7 +1,8 @@
 import vars from "./datas.js";
-import soundPlayer from "./soundPlayer.js";
+import {soundPlayer} from "./soundPlayer.js";
 import TailParticles from "./particles.js";
 export default function renderGameObjs(scene){
+scene.add.image(292,700,"board").setScale(1.5,2);
 let paddleOffset=vars.paddleOffset; 
 let xDifficulty=vars.xDifficulty; 
 let yDifficulty=vars.yDifficulty;

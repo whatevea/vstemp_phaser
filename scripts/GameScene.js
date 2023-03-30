@@ -1,4 +1,5 @@
 import GameStarter from "./Gamehandler.js";
+import { initSounds } from "./soundPlayer.js";
 export default class GameScene extends Phaser.Scene{
     constructor(){
     super({"key":"GameScene"})
@@ -17,18 +18,11 @@ create(){
 
 
 this.canPlaySound=true;
-this.add.image(292,700,"board").setScale(1.5,2);
 //enable multipointer
 this.input.addPointer(2);
 //get game objects
 //adding sounds
-this.canPlaySound=true;
-
-this.spring1=this.sound.add("spring1");
-this.spring2=this.sound.add("spring2");
-this.spring3=this.sound.add("spring3");
-this.sidebounce=this.sound.add("sidebounce");
-this.springSounds=[this.spring1,this.spring2,this.spring3];
+initSounds(this,true);
 
 let startGame= new GameStarter(this) .initGame();
 

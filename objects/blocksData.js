@@ -20,7 +20,7 @@ if(blocks.red.length===vars.maxBlocks && blocks.green.length===vars.maxBlocks){
 }
 }
 function startGame(a){
-    blocksCoordinates.score={red:0,green:1}
+    blocksCoordinates.score={red:0,green:0}
     let scene=blocks.red[0].scene;
     scene.toastElem.container.destroy();
     let startText=scene.add.text(300,500,"Starting",{ fontFamily: 'Offside',
