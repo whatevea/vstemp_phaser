@@ -35,7 +35,7 @@ let centerOffsetCheck=(paddle.width/2)*vars.centerHitPercent/100;
 if(radiusDistance<=centerOffsetCheck){
 //colldided on center
 //play animation and sound
-    ball.body.setVelocityY(ball.body.velocity.y*yDifficulty);
+    //ball.body.setVelocityY(ball.body.velocity.y*yDifficulty);
     paddle.play("bounce");
    soundPlayer(scene,"centerBounce");
 }
@@ -48,7 +48,7 @@ soundPlayer(scene,"sideBounce");
 let hitAngle = Phaser.Math.Angle.Between(ball.x, ball.y, paddle.x, paddle.y);
 // set the rotation of the ball to the hit angle
 ball.setRotation(hitAngle*radiusDistanceVector);
-ball.setVelocityX(radiusDistanceVector*xDifficulty); //4 is the difficulty rate
+// ball.setVelocityX(radiusDistanceVector*xDifficulty);
 
 }
 
