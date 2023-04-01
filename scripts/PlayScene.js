@@ -26,7 +26,8 @@ this.greenScore= new Score(this,227,64,true,this.data.score.green);
 //render blocks from data
 renderBlocks(this,this.data);
 setTimeout(() => {
-    this.ball.setVelocity(vars.finalBallVelocity);
+    this.ball.setVelocityY((vars.finalBallVelocity)*([-1,1][Phaser.Math.Between(0,1)]));
+    this.ball.setVelocityX(vars.finalBallVelocity+Phaser.Math.Between(10,20));
 }, 1200);
 
 }
