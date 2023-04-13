@@ -1,14 +1,22 @@
 //import scenes
-// import  startScreen  from "./startscreen.js";
-
-
+import LoadScene from "./LoadScene.js";
+import GameScene from "./GameScene.js";
+import PlayScene from "./PlayScene.js";
 const gameConfig = {
-  width: 1200,
-  height: 800,
   type: Phaser.AUTO,
-  scale:{mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH},
-  
-  scene : [startScreen]}
+  width: 720,
+  height: 1280,
+  parent: 'game-container',
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  },
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 440 },
+      debug: true
+    }},
+  scene : [LoadScene,GameScene,PlayScene]
+}
 export default gameConfig;
-
