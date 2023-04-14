@@ -22,14 +22,14 @@ subheading:{
 buildingsData:{
     building1:{
         scale:0.5,
-        y:400,
+        y:800,
     },
     building2:{
         scale:0.5,
-        y:468
+        y:768
     },
     building3:{
-      y:400,
+      y:800,
         scale:0.6
     },
 }

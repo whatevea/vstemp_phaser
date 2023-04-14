@@ -19,7 +19,7 @@ export default class PlayScene extends Phaser.Scene {
         this.bg=this.add.tileSprite(0,0,width,height,"cityTile").setOrigin(0,0);
         const sun= this.add.image(374,131,"sun").setScale(0.7,0.8);
         this.gameStarted=true;
-        this.player=this.physics.add.sprite(200,300,"player").play("run");
+        this.player=this.physics.add.sprite(200,500,"player").play("run");
         this.input.on("pointerdown",()=>{
             if(!this.isJumping && this.player.body.onFloor())
 
@@ -59,7 +59,16 @@ update(time,delta){
     this.bg.tilePositionX+=1.3*this.baseSpeed;
     this.brickTile.tilePositionX+=4.4*this.baseSpeed;
            }  
-    
+           this.buildingGroup.getChildren().forEach((child)=>{
+
+        if (child.x<(-child.width)){
+            console.log("out of bounds")
+
+        }
+
+           })
+           
 
 }
+
 }
