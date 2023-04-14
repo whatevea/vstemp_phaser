@@ -1,5 +1,4 @@
 import data from "./data.js";
-import enableDrag from "./handlers.js";
 import { Button, Toast } from "./ui.js";
 
 export default class GameScene extends Phaser.Scene {

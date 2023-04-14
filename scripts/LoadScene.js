@@ -16,8 +16,9 @@ this.load.image("lamp","../assets/lamplights.png");
     this.load.image("brickTile", "../assets/brickTile.png");
 
     this.load.image("dialogbubble", "../assets/dialogbubble.png");
-
-this.load.image("building1", "../assets/texture-2.png");
+    this.load.image("building1", "../assets/texture-1.png");
+    this.load.image("building3", "../assets/texture-3.png");
+this.load.image("building2", "../assets/texture-2.png");
 this.load.image("cityTile", "../assets/tile3.png");
 this.load.spritesheet("ui","../assets/ui.png",{
     frameWidth:36,

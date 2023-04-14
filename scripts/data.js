@@ -18,6 +18,20 @@ subheading:{
     fontSize:"32px",
     color:"#ff0000"
 }
+},
+buildingsData:{
+    building1:{
+        scale:0.5,
+        y:400,
+    },
+    building2:{
+        scale:0.5,
+        y:468
+    },
+    building3:{
+      y:400,
+        scale:0.6
+    },
 }
 }
 export default data;

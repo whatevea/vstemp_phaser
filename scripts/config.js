@@ -14,7 +14,7 @@ const gameConfig = {
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 440 },
+      gravity: { y: 600 },
       debug: true
     }},
   scene : [LoadScene,GameScene,PlayScene]

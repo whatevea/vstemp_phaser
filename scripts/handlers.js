@@ -1,4 +1,4 @@
-export default function enableDrag(obj){
+export  function enableDrag(obj){
     let scene = obj.scene;
     obj.setInteractive();
     scene.input.setDraggable(obj);
