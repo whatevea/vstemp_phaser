@@ -11,10 +11,9 @@ preload(){
         }
     };
     this.load.rexWebFont(config);
-this.load.image("lamp","../assets/lamplights.png");
+    this.load.image("lamp","../assets/lamplights.png");
     this.load.image("sun", "../assets/sun.png");
     this.load.image("brickTile", "../assets/brickTile.png");
-
     this.load.image("dialogbubble", "../assets/dialogbubble.png");
     this.load.image("building1", "../assets/texture-1.png");
     this.load.image("building3", "../assets/texture-3.png");
