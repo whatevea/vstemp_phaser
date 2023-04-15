@@ -4,7 +4,7 @@ import { enableDrag } from "./handlers.js";
 export function displayScore(scene){
     let text=scene.add.text(348,93,"0",data.textStyles.heading);
     const timer =scene.time.addEvent({
-        delay:100,
+        delay:500,
         callback:()=>{
             scene.score++;
             text.text=scene.score;
@@ -19,8 +19,9 @@ export function displayScore(scene){
 export function updateScore(currentScore)
 {
     let highscore = localStorage.highscore;
-    if (highscore===undefined || +(highscore)<currentScore){
-        localStorage.highscore= currentScore;
+
+    if (highscore===undefined || currentScore>highscore){
+           localStorage.highscore= currentScore;
     }
 return {new:currentScore,high:highscore}
 

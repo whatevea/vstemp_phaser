@@ -30,7 +30,7 @@ constructor(scene,height,width){
 }
 show()
 {
-    const slideAnim= this.scene.tweens.add({
+    this.slideAnim= this.scene.tweens.add({
 targets:this,
 x:this.centerLocation.x,
 y:this.centerLocation.y,

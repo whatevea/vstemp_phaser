@@ -11,7 +11,7 @@ export class Building extends Phaser.Physics.Arcade.Sprite {
         this.body.allowGravity=false;
         scene.add.existing(this);
         scene.physics.add.collider(this,scene.player)
-        this.body.setVelocityX(-200);
+        this.body.setVelocityX(data.buildingsVelocity);
         this.body.setFrictionX(0);
         this.setDepth(1);
         scene.buildingArray.add(this);
@@ -21,7 +21,7 @@ export class Building extends Phaser.Physics.Arcade.Sprite {
 
 }
 export function createBuilding(scene){
-    let tower1 = new Building(scene, 100, "building1")
+    let tower1 = new Building(scene, 250, "building1")
     let tower2 = new Building(scene, tower1.displayWidth +tower1.x+ scene.buildingDistance.min, "building2")
     let tower3 = new Building(scene, tower2.displayWidth + tower2.x+scene.buildingDistance.min, "building3")
     // this.buildingGroup.add([tower1, tower2, tower3,])

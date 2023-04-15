@@ -2,6 +2,7 @@
 import LoadScene from "./LoadScene.js";
 import GameScene from "./GameScene.js";
 import PlayScene from "./PlayScene.js";
+import data from "./data.js";
 const gameConfig = {
   type: Phaser.AUTO,
   width: 720,
@@ -14,7 +15,7 @@ const gameConfig = {
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 600 },
+      gravity: { y: data.gravity },
       debug: true
     }},
   scene : [LoadScene,GameScene,PlayScene]
