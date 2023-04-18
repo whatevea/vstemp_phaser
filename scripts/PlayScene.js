@@ -64,10 +64,9 @@ this.buildingArray.getChildren().forEach(child=>child.setVelocity(0))
 this.scoreCounter.remove();
 
 }
-
     if(this.gameStarted){
-    this.bg.tilePositionX+=1.3*this.baseSpeed;
-    this.brickTile.tilePositionX+=4.4*this.baseSpeed;
+    this.bg.tilePositionX+=1*this.baseSpeed;
+    this.brickTile.tilePositionX+=4*this.baseSpeed;
            }  
            this.buildingArray.getChildren().forEach((child)=>{
 

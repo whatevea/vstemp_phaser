@@ -41,4 +41,15 @@ repeat:0
     })
 }
 
+hide(){
+this.hideAnim=this.scene.tweens.add({
+    targets:this,
+    x:this.x+800,
+    duration:100,
+    ease:"Power2",
+    repeat:0
+})
+
+}
+
 }

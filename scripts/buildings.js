@@ -11,7 +11,7 @@ export class Building extends Phaser.Physics.Arcade.Sprite {
         this.body.allowGravity=false;
         scene.add.existing(this);
         scene.physics.add.collider(this,scene.player)
-        this.body.setVelocityX(data.buildingsVelocity);
+        this.body.setVelocityX(data.buildingsVelocity*data.baseSpeed);
         this.body.setFrictionX(0);
         this.setDepth(1);
         scene.buildingArray.add(this);
