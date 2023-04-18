@@ -21,6 +21,12 @@ export default class PlayScene extends Phaser.Scene {
         this.baseSpeed=data.baseSpeed;
         this.bg=this.add.tileSprite(0,0,width,height,"cityTile").setOrigin(0,0);
         const sun= this.add.image(374,131,"sun").setScale(0.7,0.8);
+        this.billboard=this.physics.add.image(1000,737,"billboard").setScale(0.7).setVelocityX(this.baseSpeed*data.buildingsVelocity);
+        this.billboard.body.allowGravity = false;
+        // this.billboard.body.immovable = false;
+
+
+        enableDrag(this.billboard)
         this.gameStarted=true;
         this.player=this.physics.add.sprite(200,700,"player").play("run");
         this.scoreCounter=displayScore(this);
@@ -48,7 +54,8 @@ export default class PlayScene extends Phaser.Scene {
             }
         },this)
         this.input.on("pointerup",()=>{
-            this.jumpTimer.remove();
+            try { this.jumpTimer.remove(); }
+            catch{}
             this.isJumping=false;
         })        
         this.buildingArray=this.add.group();
@@ -63,8 +70,11 @@ if(!this.gameStarted){
 this.buildingArray.getChildren().forEach(child=>child.setVelocity(0))
 this.scoreCounter.remove();
 
+
 }
     if(this.gameStarted){
+        if(this.billboard.x<-data.billboardApperanceFrequency){ this.billboard.x=Phaser.Math.Between(1000,3000);
+        console.log("pushed to back")}
     this.bg.tilePositionX+=1*this.baseSpeed;
     this.brickTile.tilePositionX+=4*this.baseSpeed;
            }  
@@ -91,11 +101,7 @@ this.scoreCounter.remove();
                const tickBtn = new Button(this, 342, 238, data.buttons.tick);
 
             box.add([text1,text2,text3,tickBtn,crossBtn])
-            // enableDrag(text1)
-            //    enableDrag(text2)
-            //    enableDrag(text3)
-            //    enableDrag(tickBtn)
-            //    enableDrag(crossBtn)
+      
 box.show();
 // box.slideAnim.on("complete",()=>{this.scene.pause()})
                crossBtn.on("pointerup", () => {

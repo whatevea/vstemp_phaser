@@ -51,6 +51,7 @@ playerJumpVelocity:300,
 distanceBetweenBuildings: { min: 170, max: 240 } ,   //changing this can make game very difficult and even non playable
 baseSpeed:2, // this will increase speed of , the background ,lamposts ,brickstiles etc. increasing this value can be harmful to eyes and make you dizzy , set it between  1 and 2 
 buildingsVelocity: -200, //this is the speed in which buildings come from right to left . 
-maxJumpTime:20 //defines how long to jump button before player falls back. Increasing this can result in fly effect
+maxJumpTime:20, //defines how long to jump button before player falls back. Increasing this can result in fly effect
+billboardApperanceFrequency:5000, //reduce this to  make it appear very often  use range (1500-5000)
 }
 export default data;

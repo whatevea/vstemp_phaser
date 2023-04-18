@@ -11,6 +11,7 @@ preload(){
         }
     };
     this.load.rexWebFont(config);
+    this.load.image("billboard","../assets/billboard.png")
     this.load.image("lamp","../assets/lamplights.png");
     this.load.image("sun", "../assets/sun.png");
     this.load.image("brickTile", "../assets/brickTile.png");
