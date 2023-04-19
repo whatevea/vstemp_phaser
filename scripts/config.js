@@ -16,7 +16,7 @@ const gameConfig = {
     default: 'arcade',
     arcade: {
       gravity: { y: data.gravity },
-      debug: true
+      debug: false
     }},
   scene : [LoadScene,GameScene,PlayScene]
 }
