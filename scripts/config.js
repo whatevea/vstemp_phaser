@@ -5,8 +5,8 @@ import PlayScene from "./PlayScene.js";
 import data from "./data.js";
 const gameConfig = {
   type: Phaser.AUTO,
-  width: 720,
-  height: 1280,
+  width: 1280,
+  height: 720,
   parent: 'game-container',
   scale: {
     mode: Phaser.Scale.FIT,

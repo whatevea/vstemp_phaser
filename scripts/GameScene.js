@@ -7,13 +7,13 @@ export default class GameScene extends Phaser.Scene {
 
     create() {
 
-        const bg=this.add.image(0,0,"cityTile").setOrigin(0,0);
-        bg.setDisplaySize(this.game.config.width, this.game.config.height);
+        const {width,height}=this.scale;
+        this.bgTile = this.add.tileSprite(0, 0, width, height, "bgTile").setOrigin(0,0);
         const box= new Toast(this,400,400)
         const playBtn=new Button(this,200,220,data.buttons.play);
         const settingBtn = new Button(this, 57,337, data.buttons.settings);
         const aboutBtn = new Button(this, 347, 336, data.buttons.icon);
-        const titleText=this.add.text(17,19,"Late To Work Clone",data.textStyles.heading)
+        const titleText=this.add.text(17,19,"TImed Platformer",data.textStyles.heading)
         box.add([playBtn,settingBtn,aboutBtn,titleText])
         box.show()
 //box2
@@ -79,6 +79,13 @@ else{
 
 
 }
+
+update(){
+
+    this.bgTile.tilePositionX--;
+this.bgTile.tilePositionY--;
+}
+
     setFrameBtn() {
         let state1 = JSON.parse(localStorage.musicState) ? data.buttons.tick : data.buttons.cross
         this.musicBtn.setFrame(state1);

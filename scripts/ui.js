@@ -2,13 +2,13 @@ export class Button extends Phaser.GameObjects.Sprite {
     constructor(scene,x,y,type) {
         super(scene,x,y,"ui");
         this.setFrame(type);
-        this.setScale(3)
+        this.setScale(2)
         scene.add.existing(this);
         this.setInteractive();
 
 
         this.on('pointerdown',function(){
-            this.setScale(2.6);
+            this.setScale(1.8);
         });
     }
 
@@ -44,7 +44,7 @@ repeat:0
 hide(){
 this.hideAnim=this.scene.tweens.add({
     targets:this,
-    x:this.x+800,
+    x:this.x+1800,
     duration:100,
     ease:"Power2",
     repeat:0
