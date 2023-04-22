@@ -6,6 +6,7 @@ export default class GameScene extends Phaser.Scene {
     }
 
     create() {
+        this.scene.start("PlayScene")
 
         const {width,height}=this.scale;
         this.bgTile = this.add.tileSprite(0, 0, width, height, "bgTile").setOrigin(0,0);
