@@ -135,6 +135,30 @@ scene.leftrightplatforms.push(obj)
 layer.removeTileAt(tile.x,tile.y)
 //finsish
 }
+else if (tile.properties.type==="spring"){
+        const x = tile.getCenterX()
+        const y = tile.getCenterY();
+        let obj=scene.physics.add.sprite(x,y,"spring").setScale(0.7);
+
+        obj.body.setAllowGravity(false);
+        scene.physics.add.overlap(scene.player,obj,()=>{
+
+            if(obj.frame.name===3){
+                scene.player.body.setVelocityY(-400);
+                console.log("jump here mf")
+                scene.player.play("jump")
+
+            }
+
+        })
+        scene.emitter.on("rightdown", () => {
+            obj.play("boing");
+        })
+        scene.emitter.on("rightup", () => {
+            obj.stop()
+        })
+
+}
 
 
 

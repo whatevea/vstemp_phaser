@@ -9,6 +9,9 @@ preload(){
     this.load.image("ppink", "/assets/pinkparticle.png")
 this.load.image("sideblock","/assets/sideblock.png")
     this.load.image("updownblock", "/assets/downblock.png")
+    this.load.spritesheet("spring","/assets/spring.png",
+    {frameWidth:117,
+    frameHeight:51})
 this.load.spritesheet("key","/assets/key-white.png",{
     frameWidth:32,
     frameHeight:32
@@ -49,6 +52,12 @@ this.load.spritesheet("door","/assets/door.png",{
 }
 
 create(){
+    this.anims.create({
+        key: "boing",
+        frames: this.anims.generateFrameNumbers("spring", { frames: [0, 1, 2, 3] }),
+        frameRate: 5,
+        repeat: -1
+    })
 
     //phaser animation simple code
 this.anims.create({
