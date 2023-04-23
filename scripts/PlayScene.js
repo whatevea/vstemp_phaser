@@ -8,6 +8,8 @@ export default class PlayScene extends Phaser.Scene {
         super({ key: "PlayScene" })
     }
 create(){
+    this.updownplatforms=[];
+    this.leftrightplatforms=[];
     this.gameOver=false;
     this.input.addPointer(1);
     this.emitter = new Phaser.Events.EventEmitter();
@@ -49,13 +51,13 @@ else{
 update()
 {
     // console.log(this.player.direction)
-    if (this.player.direction === "right" && this.player.body.blocked.right){
+    if (this.player.direction === "right" && this.player.body.blocked.right &&this.player.isMoving){
     this.player.setFlipX(true);
     this.player.direction="left";
         this.player.body.setVelocityX(-200)
 
     }
-   else  if(this.player.direction === "left"  && this.player.body.blocked.left){
+   else  if(this.player.direction === "left"  && this.player.body.blocked.left && this.player.isMoving){
         console.log("leftblocked")
 
     this.player.setFlipX(false);
@@ -63,7 +65,38 @@ update()
         this.player.body.setVelocityX(200)
 
     }
-    // this.physics.collide(this.player, this.layer)
+
+    if(this.updownplatforms){
+        this.updownplatforms.forEach((item)=>{
+            if (item.direction === "up" && item.body.blocked.up) {
+                item.direction = "down";
+                item.body.setVelocityY(100)
+
+            }
+            else if (item.direction === "down" && item.body.blocked.down) {
+                item.direction = "up";
+                item.body.setVelocityY(-100)
+
+            }
+        })
+    }
+    if (this.leftrightplatforms){
+    this.leftrightplatforms.forEach((item) => {
+        if (item.direction === "left" && item.body.blocked.left) {
+            item.direction = "right";
+            item.body.setVelocityX(100)
+
+        }
+        else if (item.direction === "right" && item.body.blocked.right) {
+            item.direction = "left";
+            item.body.setVelocityX(-100)
+
+        }
+    })
+
+}
+
+
 }
 
 setEmitter(){

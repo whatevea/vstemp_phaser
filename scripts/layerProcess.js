@@ -1,4 +1,4 @@
-const blueItems=[];
+let home;
 
 export default function processLayer(scene,layer){
 
@@ -25,15 +25,116 @@ layer.forEachTile((tile) => {
     }
 
 
-    if (tile.properties.type == "home") {
+   else  if (tile.properties.type == "home") {
 
-        scene.home=scene.physics.add.sprite(tile.getCenterX(),tile.getCenterY(),"door").setScale(3);
+        home=scene.physics.add.sprite(tile.getCenterX(),tile.getCenterY(),"door").setScale(2.5).setOrigin(0,0)
+        home.body.setAllowGravity(false);
+        scene.physics.add.overlap(scene.player,home,()=>{
+if(home.frame.name===4){
+scene.emitter.emit("LevelCompleted")
+    
+}
+
+        })
         
         
         layer.removeTileAt(tile.x,tile.y)
 
     }
 
+
+  else  if(tile.properties.type==="key"){
+        let x = tile.getCenterX();
+        let y = tile.getCenterY() - 20;
+let key=scene.physics.add.sprite(x,y,"key").setScale(2)
+key.play("spin");
+layer.removeTileAt(tile.x,tile.y);
+        key.body.setAllowGravity(false);
+scene.physics.add.overlap(scene.player,key,()=>{
+    home.play("dooropen")
+    const emitter = scene.add.particles(x, y, "pblue", {
+        emitting: false,
+        lifespan: 1000,
+        speed: { min: 100, max: 400 },
+        scale: { start: 0.4, end: 0 },
+        blendMode: "ADD",
+        gravityY: 150,
+    })
+    emitter.explode(14);
+    key.destroy();
+
+})
+
+    }
+
+
+else if(tile.properties.type==="updownblock"){
+    const x=tile.getCenterX()
+const y=tile.getCenterY();
+layer.removeTileAt(tile.x,tile.y);
+let obj=scene.physics.add.image(x,y,"updownblock")
+obj.direction = "up";
+obj.body.setAllowGravity(false);
+ obj.body.setImmovable(true);
+scene.physics.add.collider(obj,layer);
+        scene.physics.add.collider(obj,scene.player);
+
+scene.emitter.on("rightdown",()=>{
+
+if(obj.direction==="down"){
+    obj.setVelocityY(100);
+}
+else if( obj.direction==="up"){
+    obj.setVelocityY(-100);
+
+}
+
+    
+})
+scene.emitter.on("rightup",()=>{
+obj.setVelocity(0);
+
+})
+
+
+
+scene.updownplatforms.push(obj);
+
+//finish
+    }
+
+    else if(tile.properties.type==="leftrightblock")
+{
+        const x = tile.getCenterX()
+        const y = tile.getCenterY();
+let obj=scene.physics.add.image(x,y,"sideblock");
+scene.physics.add.collider(obj,scene.player);
+        scene.physics.add.collider(obj, layer);
+        obj.body.setAllowGravity(false);
+        obj.body.setImmovable(true);
+        obj.direction="left";
+        scene.emitter.on("rightdown", () => {
+
+            if (obj.direction === "right") {
+                obj.setVelocityX(100);
+            }
+            else if (obj.direction === "left") {
+                obj.setVelocityX(-100);
+
+            }
+
+
+        })
+        scene.emitter.on("rightup", () => {
+            obj.setVelocity(0);
+
+        })
+scene.leftrightplatforms.push(obj)
+
+
+layer.removeTileAt(tile.x,tile.y)
+//finsish
+}
 
 
 

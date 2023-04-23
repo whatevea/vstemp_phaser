@@ -7,7 +7,12 @@ preload(){
     this.load.image("time", "/assets/time.png")
     this.load.image("pblue", "/assets/blueparticle.png")
     this.load.image("ppink", "/assets/pinkparticle.png")
-
+this.load.image("sideblock","/assets/sideblock.png")
+    this.load.image("updownblock", "/assets/downblock.png")
+this.load.spritesheet("key","/assets/key-white.png",{
+    frameWidth:32,
+    frameHeight:32
+})
     this.load.image("redclock","/assets/redclock.png")
     this.load.image("blueclock", "/assets/blueclock.png")
     this.load.image("spinner","/assets/spinner.png")
@@ -52,6 +57,14 @@ this.anims.create({
     frameRate:5,
     repeat:0
 })
+    this.anims.create({
+        key: "spin",
+        frames: this.anims.generateFrameNumbers("key", { frames: [0, 1, 2, 3, 4,5,6,7,8,9,10,11] }),
+        frameRate: 5,
+        repeat: -1
+    })
+
+
 
 this.anims.create({
 
