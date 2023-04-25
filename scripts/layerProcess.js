@@ -10,7 +10,7 @@ layer.forEachTile((tile) => {
         scene.physics.add.overlap(scene.player,spike,()=>{
             if(spike.frame.name === 1){
                 
-                scene.emitter.emit("GameOver")
+                scene.emitter.emit("GameOver","Ouch !!!")
 
 
 

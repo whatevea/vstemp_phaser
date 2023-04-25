@@ -1,7 +1,7 @@
 import { enableDrag } from "./extras.js"
 
 export default function renderHud(scene){
-const reduceDelay=1000;
+const reduceDelay=100;
     const gap=360;
     var rotation1;
     var rotation2;

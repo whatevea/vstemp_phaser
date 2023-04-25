@@ -3,6 +3,7 @@ import LoadScene from "./LoadScene.js";
 import GameScene from "./GameScene.js";
 import PlayScene from "./PlayScene.js";
 import data from "./data.js";
+import LevelLoader from "./LevelLoader.js";
 const gameConfig = {
   type: Phaser.AUTO,
   width: 1280,
@@ -18,6 +19,6 @@ const gameConfig = {
       gravity: { y: data.gravity },
       debug: true
     }},
-  scene : [LoadScene,GameScene,PlayScene]
+  scene : [LoadScene,GameScene,PlayScene,LevelLoader]
 }
 export default gameConfig;

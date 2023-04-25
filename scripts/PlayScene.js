@@ -28,8 +28,9 @@ this.right=false;
 this.pausebtn=this.add.image(1199,47,"pausebtn").setScale(0.3);
 this.pausebtn.setInteractive();
 this.pausebtn.on("pointerdown",()=>{
+    if(!this.gameOver){
 PauseHandler(this)
-
+    }
 })
 renderHud(this)
 
@@ -133,7 +134,7 @@ setEmitter(){
         emitter.explode(74);
         this.player.setVisible(false);
         this.player.setActive(false);
-            GameOverHandler(this);
+            GameOverHandler(this,message);
 
     }
 

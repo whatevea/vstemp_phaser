@@ -6,8 +6,7 @@ export default class GameScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("PlayScene")
-
+        // this.scene.start("PlayScene")
         const {width,height}=this.scale;
         this.bgTile = this.add.tileSprite(0, 0, width, height, "bgTile").setOrigin(0,0);
         const box= new Toast(this,400,400)
@@ -36,7 +35,9 @@ export default class GameScene extends Phaser.Scene {
         
         
     playBtn.on("pointerup",()=>{
-            this.scene.start("PlayScene")
+this.scene.start("LevelLoader",  { level: localStorage.lastLevel || "level1"   })
+ 
+// this.scene.start("PlayScene")
         })
     //settings btn:
     settingBtn.on("pointerup",()=>{

@@ -1,4 +1,33 @@
 const data={
+levelsdata:{
+level1:{
+levelname:"Tutorial #1 ",
+player:{
+        x:330,
+        y: 442
+},
+scrollingText: " This is the first game i have ever created",
+manaRate:100
+
+},
+level2:{
+    levelname: "Tutorial #2 ",
+    player: {
+        x: 330,
+        y: 442
+    },
+    scrollingText: " This is the first game i have ever created",
+    manaRate: 100
+//
+
+}
+
+
+
+},
+
+
+
 buttons:{
     home:1,
     cross:5,
@@ -15,7 +44,11 @@ heading:{
     fontFamily:"Bangers",
     fontSize:"52px",
     color:"#000000"
-},
+    }, heading2: {
+        fontFamily: "Bangers",
+        fontSize: "52px",
+        color: "#ffffff"
+    },
     casual: {
         fontFamily: "Bangers",
         fontSize: "24px",
