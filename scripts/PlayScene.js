@@ -3,6 +3,7 @@ import data from "./data.js";
 import processLayer from "./layerProcess.js";
 import Player from "./player.js";
 import { Button, Toast } from "./ui.js";
+import { GameOverHandler,enableDrag,PauseHandler } from "./extras.js";
 export default class PlayScene extends Phaser.Scene {
     constructor() {
         super({ key: "PlayScene" })
@@ -24,20 +25,31 @@ this.player=new Player(this,330,442);
 processLayer(this,this.layer);
 this.left=false;
 this.right=false;
-const text=this.add.text(123,123,"Here will be text")
-    renderHud(this)
+this.pausebtn=this.add.image(1199,47,"pausebtn").setScale(0.3);
+this.pausebtn.setInteractive();
+this.pausebtn.on("pointerdown",()=>{
+PauseHandler(this)
+
+})
+renderHud(this)
 
 this.input.on("pointerdown",pointer=>{
-    if (pointer.x<this.scale.width/2){
+    if (!this.gameOver) {
+
+    if (pointer.x<this.scale.width/2  ){
 this.emitter.emit("leftdown")
 }
     else{
         this.emitter.emit("rightdown")
 
     }
-})
+}
+}
+
+)
 this.input.on("pointerup",(pointer)=>{
-if(pointer.x<this.scale.width/2){
+
+    if (pointer.x < this.scale.width / 2  ){
     this.emitter.emit("leftup")
 
 }
@@ -45,7 +57,12 @@ else{
     this.emitter.emit("rightup")
 
 }
-})
+
+
+
+}
+
+)
 
 }
 update()
@@ -116,7 +133,11 @@ setEmitter(){
         emitter.explode(74);
         this.player.setVisible(false);
         this.player.setActive(false);
-    }}
+            GameOverHandler(this);
+
+    }
+
+}
     
     )
 

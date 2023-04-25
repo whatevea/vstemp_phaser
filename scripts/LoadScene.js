@@ -16,6 +16,10 @@ this.load.spritesheet("key","/assets/key-white.png",{
     frameWidth:32,
     frameHeight:32
 })
+    this.load.image("pausebtn", "/assets/pausebtn.png")
+    this.load.spritesheet("uis","/assets/56x59gui.png",
+    {frameWidth:56,
+    frameHeight:59})
     this.load.image("redclock","/assets/redclock.png")
     this.load.image("blueclock", "/assets/blueclock.png")
     this.load.image("spinner","/assets/spinner.png")

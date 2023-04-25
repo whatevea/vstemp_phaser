@@ -16,6 +16,11 @@ heading:{
     fontSize:"52px",
     color:"#000000"
 },
+    casual: {
+        fontFamily: "Bangers",
+        fontSize: "24px",
+        color: "#000000"
+    },
 subheading:{
     fontFamily:"Bangers",
     fontSize:"32px",
