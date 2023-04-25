@@ -48,7 +48,21 @@ this.load.spritesheet("spikes","/assets/spikes.png",{
         frameHeight:32
     })
 this.load.image('tiles',"/assets/gridtiles.png");
-this.load.tilemapTiledJSON("map","/assets/level1.json")
+this.load.tilemapTiledJSON("level1","/assets/level1.json")
+    this.load.tilemapTiledJSON("level2", "/assets/level2.json")
+    this.load.tilemapTiledJSON("level3", "/assets/level3.json")
+    this.load.tilemapTiledJSON("level4", "/assets/level4.json")
+    this.load.tilemapTiledJSON("level5", "/assets/level5.json")
+    this.load.tilemapTiledJSON("level6", "/assets/level6.json")
+    this.load.tilemapTiledJSON("level7", "/assets/level7.json")
+    this.load.tilemapTiledJSON("level8", "/assets/level8.json")
+    this.load.tilemapTiledJSON("level9", "/assets/level9.json")
+    this.load.tilemapTiledJSON("level10", "/assets/level10.json")
+    this.load.tilemapTiledJSON("level11", "/assets/level11.json")
+    this.load.tilemapTiledJSON("level12", "/assets/level12.json")
+    this.load.tilemapTiledJSON("level13", "/assets/level13.json")
+    this.load.tilemapTiledJSON("level14", "/assets/level14.json")
+    this.load.tilemapTiledJSON("level15", "/assets/level15.json")
 this.load.spritesheet("door","/assets/door.png",{
     frameWidth:16,
     frameHeight:32

@@ -6,22 +6,90 @@ player:{
         x:330,
         y: 442
 },
-scrollingText: " This is the first game i have ever created",
-manaRate:100
+scrollingText: " Welcome ! Move the player by pressing LEFT Cursor Button or touching left side of screen. \n Find your way to the door. Notice in the middle of two clocks you have time which \n gets consumed as you move. Get to the door",
+manaRate:60,
+homeOpen:true
 
 },
 level2:{
     levelname: "Tutorial #2 ",
     player: {
-        x: 330,
+        x: 400,
         y: 442
     },
-    scrollingText: " This is the first game i have ever created",
-    manaRate: 100
+    scrollingText: "Life is a lot like a game - sometimes we have to change direction to keep moving forward .\n    Nevertheless try to keep on moving.....",
+    manaRate: 100,
+    homeOpen: true
+
 //
 
-}
+},
+        level3: {
+            levelname: "Tutorial #3 ",
+            player: {
+                x: 330,
+                y: 442
+            },
+            scrollingText: "The moving platforms in our lives can be unpredictable,\n but by letting go and waiting for the right moment,\n we can find our footing and move forward with purpose..\n Hold RIGHT cursor key or touch right side of screen(mobile) to move platforms..",
+            manaRate: 100,
+            homeOpen: true
 
+            //
+
+        },
+        level4: {
+            levelname: "Level #1",
+            player: {
+                x: 330,
+                y: 442
+            },
+            scrollingText: "Time is a key that can open doors to the treasures of life.\n Use it wisely and doors will never be closed to you.    --CHATGPT. \n    Holding Right key or pressing right side (mobile) will activate time in every blue looking thing."  ,
+            manaRate: 300,
+            homeOpen: false
+
+            //
+
+        },
+        level5: {
+            levelname: "Level #2 ",
+            player: {
+                x: 370,
+                y: 442
+            },
+            scrollingText: "Level Hint : Time is everything.",
+            manaRate: 80,
+            homeOpen: false
+
+            //
+
+        },
+
+        level6: {
+            levelname: "Level #3 ",
+            player: {
+                x: 370,
+                y: 442
+            },
+            scrollingText: "Level Hint : Dont Resist, Flow with Time.",
+            manaRate: 38,
+            homeOpen: false
+
+            //
+
+        },
+        level7: {
+            levelname: "Level #4 ",
+            player: {
+                x: 370,
+                y: 442
+            },
+            scrollingText: "Level Hint : Dont Resist, Flow with Time.",
+            manaRate: 380,
+            homeOpen: false
+
+            //
+
+        }
 
 
 },
@@ -53,6 +121,10 @@ heading:{
         fontFamily: "Bangers",
         fontSize: "24px",
         color: "#000000"
+    }, casual2: {
+        fontFamily: "Bangers",
+        fontSize: "24px",
+        color: "#ffffff"
     },
 subheading:{
     fontFamily:"Bangers",

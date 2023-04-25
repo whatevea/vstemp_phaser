@@ -27,7 +27,10 @@ layer.forEachTile((tile) => {
 
    else  if (tile.properties.type == "home") {
 
-        home=scene.physics.add.sprite(tile.getCenterX(),tile.getCenterY(),"door").setScale(2.5).setOrigin(0,0)
+        home=scene.physics.add.sprite(tile.getCenterX(),tile.getCenterY(),"door").setScale(2.5).setOrigin(0,0);
+        if(scene.levelData.homeOpen){
+            home.setFrame(4);
+        }
         home.body.setAllowGravity(false);
         scene.physics.add.overlap(scene.player,home,()=>{
 if(home.frame.name===4){

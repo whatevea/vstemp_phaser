@@ -35,7 +35,7 @@ export default class GameScene extends Phaser.Scene {
         
         
     playBtn.on("pointerup",()=>{
-this.scene.start("LevelLoader",  { level: localStorage.lastLevel || "level1"   })
+this.scene.start("LevelLoader",  { level: localStorage.lastLevel || "level7"   })
  
 // this.scene.start("PlayScene")
         })

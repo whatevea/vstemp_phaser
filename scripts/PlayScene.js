@@ -4,67 +4,51 @@ import processLayer from "./layerProcess.js";
 import Player from "./player.js";
 import { Button, Toast } from "./ui.js";
 import { GameOverHandler,enableDrag,PauseHandler } from "./extras.js";
+import handleControls from "./controlHandler.js";
+import TypeWrite from "./typewriter.js";
 export default class PlayScene extends Phaser.Scene {
     constructor() {
         super({ key: "PlayScene" })
     }
 create(){
+    const level=this.scene.settings.data.level;
+    this.levelData=data.levelsdata[level]
     this.updownplatforms=[];
     this.leftrightplatforms=[];
-    this.gameOver=false;
+    this.gameOver=true;
     this.input.addPointer(1);
     this.emitter = new Phaser.Events.EventEmitter();
     this.setEmitter();
-this.map=this.make.tilemap({key:"map",tileWidth:32,tileHeight:32});
+this.map=this.make.tilemap({key:level,tileWidth:32,tileHeight:32});
 this.tileset=this.map.addTilesetImage("gridtiles","tiles");
 this.layer=this.map.createLayer("Tile Layer 1",this.tileset,150);
 this.map.setCollision([6,19,33,47])
-this.player=new Player(this,330,442);
-    this.physics.add.collider(this.player, this.layer);
 
+//level render starts here 
+//render text
+if(this.levelData.scrollingText){
+    let text = new TypeWrite(this, this.levelData.scrollingText,250,300,50)
+    text.makeText();
+    text.showText()
+}
+else{
+    this.gameOver=false;
+}
+this.player=new Player(this,this.levelData.player.x,this.levelData.player.y);
+this.physics.add.collider(this.player, this.layer);
 processLayer(this,this.layer);
 this.left=false;
 this.right=false;
-this.pausebtn=this.add.image(1199,47,"pausebtn").setScale(0.3);
+this.pausebtn=this.add.image(67,247,"pausebtn").setScale(0.3);
 this.pausebtn.setInteractive();
+enableDrag(this.pausebtn)
 this.pausebtn.on("pointerdown",()=>{
     if(!this.gameOver){
 PauseHandler(this)
     }
 })
-renderHud(this)
-
-this.input.on("pointerdown",pointer=>{
-    if (!this.gameOver) {
-
-    if (pointer.x<this.scale.width/2  ){
-this.emitter.emit("leftdown")
-}
-    else{
-        this.emitter.emit("rightdown")
-
-    }
-}
-}
-
-)
-this.input.on("pointerup",(pointer)=>{
-
-    if (pointer.x < this.scale.width / 2  ){
-    this.emitter.emit("leftup")
-
-}
-else{
-    this.emitter.emit("rightup")
-
-}
-
-
-
-}
-
-)
-
+renderHud(this);
+handleControls(this);
 }
 update()
 {
@@ -73,8 +57,8 @@ update()
     this.player.setFlipX(true);
     this.player.direction="left";
         this.player.body.setVelocityX(-200)
-
     }
+
    else  if(this.player.direction === "left"  && this.player.body.blocked.left && this.player.isMoving){
         console.log("leftblocked")
 
