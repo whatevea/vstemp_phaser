@@ -1,14 +1,16 @@
 import data from "./data.js";
-export default class LevelLoader extends Phaser.Scene {
+export default class LevelWinScene extends Phaser.Scene {
     constructor() {
-        super({ key: "LevelLoader" })
+        super({ key: "LevelWinScene" })
     }
 
     create() {
         const level = this.scene.settings.data.level;
-        const nextlevel= "level"+(+(level.split("el")[1]))+1;
+
+        const nextlevel = `level${+(level.split("level")[1]) + 1}`;
+
         console.log(nextlevel)
-        this.text = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2, "Level Completed", data.textStyles.heading2).setOrigin(0.5)
+        this.text = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2, "Level Completed.", data.textStyles.heading2).setOrigin(0.5)
         this.tweens.add({
             targets: this.text,
             alpha: { from: 0, to: 1 },
@@ -22,8 +24,13 @@ export default class LevelLoader extends Phaser.Scene {
                     duration: 1000,
                     ease: 'Linear',
                     onComplete: () => {
+                        if(localStorage.lastLevel!=="level9"){
+                        localStorage.lastLevel=nextlevel;
                         // Transition to another scene
-                        this.scene.start('LevelLoader', { level: nextlevel });
+                        this.scene.start('LevelLoader', { level: nextlevel });}
+                        else{
+                            this.scene.start("GameComplete")
+                        }
                     }
                 });
             }

@@ -8,6 +8,14 @@ preload(){
     this.load.image("pblue", "/assets/blueparticle.png")
     this.load.image("ppink", "/assets/pinkparticle.png")
 this.load.image("sideblock","/assets/sideblock.png")
+this.load.audio("click","/assets/sounds/click.wav")
+    this.load.audio("explode", "/assets/sounds/explosion.wav")
+    this.load.audio("hurt", "/assets/sounds/click.wav")
+    this.load.audio("jump", "/assets/sounds/jump.wav")
+    this.load.audio("music", "/assets/sounds/music.mp3")
+    this.load.audio("win", "/assets/sounds/win.wav")
+    this.load.audio("dooropen", "/assets/sounds/dooropen.wav")
+
     this.load.image("updownblock", "/assets/downblock.png")
     this.load.spritesheet("spring","/assets/spring.png",
     {frameWidth:117,
@@ -23,7 +31,7 @@ this.load.spritesheet("key","/assets/key-white.png",{
     this.load.image("redclock","/assets/redclock.png")
     this.load.image("blueclock", "/assets/blueclock.png")
     this.load.image("spinner","/assets/spinner.png")
-    this.add.text(322,213," LOADING>>>>>>>>>>");
+    this.add.text(322,213," Loading..................");
     this.plugins.get('rexwebfontloaderplugin').addToScene(this);
 this.load.spritesheet("spikes","/assets/spikes.png",{
     frameWidth:114,

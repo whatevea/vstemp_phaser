@@ -20,10 +20,14 @@ scene.gameOver=true
     let homeBtn = scene.add.sprite(160,91, "uis").setFrame(37).setInteractive()
 
     continueBtn.on("pointerdown",()=>{
+        if (localStorage.soundState === "true") { scene.sound.play("click") }
+
         bg.hide();
         scene.gameOver=false;
     })
     homeBtn.on("pointerdown",()=>{
+        if (localStorage.soundState === "true") { scene.sound.play("click") }
+
         scene.scene.start("GameScene")
     })
 
@@ -42,9 +46,13 @@ export function GameOverHandler(scene,text) {
     let homeBtn = scene.add.sprite(160, 91, "uis").setFrame(37).setInteractive()
 
     restartBtn.on("pointerdown", () => {
+        if (localStorage.soundState === "true") { scene.sound.play("click") }
+
         scene.scene.restart()
     })
     homeBtn.on("pointerdown", () => {
+        if (localStorage.soundState === "true") { scene.sound.play("click") }
+
         scene.scene.start("GameScene")
     })
 

@@ -23,7 +23,7 @@ scene.emitter.on("leftdown",()=>{
         callback:()=>{
             time.displayHeight--;
             if(time.displayHeight<1 ){
-                scene.emitter.emit("GameOver", "Time is Finished.")
+                scene.emitter.emit("GameOver", "Time is limited!.")
 
             }
         },

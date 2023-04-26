@@ -11,6 +11,12 @@ export default class PlayScene extends Phaser.Scene {
         super({ key: "PlayScene" })
     }
 create(){
+if(localStorage.musicState==="true"){
+    console.log("music bajapp")
+    this.music = this.sound.add('music');
+    this.music.play()
+}
+
     const level=this.scene.settings.data.level;
     this.levelData=data.levelsdata[level]
     this.updownplatforms=[];
@@ -110,6 +116,12 @@ setEmitter(){
 
         if(!this.gameOver){
             this.gameOver=true;
+            try{
+                this.music.stop()
+            }
+            catch{
+
+            }
         const emitter = this.add.particles(this.player.x,this.player.y, "ppink", {
             emitting: false,
             lifespan: 1000,
@@ -119,6 +131,8 @@ setEmitter(){
             gravityY: 150,
         })
         emitter.explode(74);
+            if (localStorage.soundState === "true") { this.sound.play("explode") }
+
         this.player.setVisible(false);
         this.player.setActive(false);
             GameOverHandler(this,message);
@@ -128,6 +142,24 @@ setEmitter(){
 }
     
     )
+this.emitter.on("LevelCompleted",()=>{
+    if(!this.gameOver){
+    
+if(localStorage.soundState==="true"){
+    this.sound.play("win")
+
+}
+
+        try {
+            this.music.stop()
+          
+        }
+        catch {
+
+        }
+    this.scene.start("LevelWinScene", { level: this.scene.settings.data.level})}
+})
+
 
 }
 }

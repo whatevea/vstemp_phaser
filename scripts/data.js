@@ -44,7 +44,7 @@ level2:{
                 y: 442
             },
             scrollingText: "Time is a key that can open doors to the treasures of life.\n Use it wisely and doors will never be closed to you.    --CHATGPT. \n    Holding Right key or pressing right side (mobile) will activate time in every blue looking thing."  ,
-            manaRate: 300,
+            manaRate: 320,
             homeOpen: false
 
             //
@@ -83,8 +83,31 @@ level2:{
                 x: 370,
                 y: 442
             },
-            scrollingText: "Level Hint : Dont Resist, Flow with Time.",
-            manaRate: 3280,
+            manaRate: 250,
+            homeOpen: false
+
+            //
+
+        },
+        level8: {
+            levelname: "Level #5 ",
+            player: {
+                x: 370,
+                y: 12
+            },
+            manaRate: 300,
+            homeOpen: false
+
+            //
+
+        },
+        level9: {
+            levelname: "Level #6 ",
+            player: {
+                x: 370,
+                y: 120
+            },
+            manaRate: 350,
             homeOpen: false
 
             //
@@ -92,7 +115,10 @@ level2:{
         }
 
 
+
+
 },
+
 
 
 

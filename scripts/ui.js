@@ -8,6 +8,8 @@ export class Button extends Phaser.GameObjects.Sprite {
 
 
         this.on('pointerdown',function(){
+            if (localStorage.soundState==="true") { scene.sound.play("click") }
+
             this.setScale(1.8);
         });
     }

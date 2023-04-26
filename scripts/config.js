@@ -4,6 +4,8 @@ import GameScene from "./GameScene.js";
 import PlayScene from "./PlayScene.js";
 import data from "./data.js";
 import LevelLoader from "./LevelLoader.js";
+import LevelWinScene from "./LevelWinScene.js";
+import GameComplete from "./GameComplete.js";
 const gameConfig = {
   type: Phaser.AUTO,
   width: 1280,
@@ -17,8 +19,8 @@ const gameConfig = {
     default: 'arcade',
     arcade: {
       gravity: { y: data.gravity },
-      debug: true
+      debug: false
     }},
-  scene : [LoadScene,GameScene,PlayScene,LevelLoader]
+  scene : [LoadScene,GameScene,PlayScene,LevelLoader,LevelWinScene,GameComplete]
 }
 export default gameConfig;

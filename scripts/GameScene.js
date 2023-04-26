@@ -13,7 +13,7 @@ export default class GameScene extends Phaser.Scene {
         const playBtn=new Button(this,200,220,data.buttons.play);
         const settingBtn = new Button(this, 57,337, data.buttons.settings);
         const aboutBtn = new Button(this, 347, 336, data.buttons.icon);
-        const titleText=this.add.text(17,19,"TImed Platformer",data.textStyles.heading)
+        const titleText=this.add.text(17,19,"Color Clockers ..",data.textStyles.heading)
         box.add([playBtn,settingBtn,aboutBtn,titleText])
         box.show()
 //box2
@@ -35,7 +35,7 @@ export default class GameScene extends Phaser.Scene {
         
         
     playBtn.on("pointerup",()=>{
-this.scene.start("LevelLoader",  { level: localStorage.lastLevel || "level7"   })
+this.scene.start("LevelLoader",  { level: localStorage.lastLevel || "level1"   })
  
 // this.scene.start("PlayScene")
         })
@@ -48,7 +48,7 @@ box2.show()
     
     //initalize sounds and music
     if(localStorage.musicState ===undefined && localStorage.soundState === undefined){
-        localStorage.musicState=true;
+        localStorage.musicState=false;
         localStorage.soundState=true;
     }
 
@@ -68,7 +68,12 @@ else{
     this.setFrameBtn()
 
 
+    try {
+        this.sound.stopAll()
+    }
+    catch {
 
+    }
 //stop music here
 
 })

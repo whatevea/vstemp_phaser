@@ -54,6 +54,10 @@ key.play("spin");
 layer.removeTileAt(tile.x,tile.y);
         key.body.setAllowGravity(false);
 scene.physics.add.overlap(scene.player,key,()=>{
+
+    if(localStorage.soundState==="true"){
+        scene.sound.play("dooropen")
+    }
     home.play("dooropen")
     const emitter = scene.add.particles(x, y, "pblue", {
         emitting: false,
@@ -147,6 +151,8 @@ else if (tile.properties.type==="spring"){
         scene.physics.add.overlap(scene.player,obj,()=>{
 
             if(obj.anims.isPlaying){
+                if (localStorage.soundState === "true") { scene.sound.play("jump") }
+
                 scene.player.body.setVelocityY(-409);
                 console.log("jump here mf")
                 scene.player.play("jump")
