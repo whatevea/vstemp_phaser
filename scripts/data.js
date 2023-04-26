@@ -84,7 +84,7 @@ level2:{
                 y: 442
             },
             scrollingText: "Level Hint : Dont Resist, Flow with Time.",
-            manaRate: 380,
+            manaRate: 3280,
             homeOpen: false
 
             //

@@ -97,7 +97,10 @@ update()
     })
 
 }
+if(!this.gameOver && this.player.body.velocity.x!==0 && this.player.body.velocity.y===0){
+this.player.play("run",true);
 
+}
 
 }
 

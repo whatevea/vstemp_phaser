@@ -146,8 +146,8 @@ else if (tile.properties.type==="spring"){
         obj.body.setAllowGravity(false);
         scene.physics.add.overlap(scene.player,obj,()=>{
 
-            if(obj.frame.name===3){
-                scene.player.body.setVelocityY(-400);
+            if(obj.anims.isPlaying){
+                scene.player.body.setVelocityY(-409);
                 console.log("jump here mf")
                 scene.player.play("jump")
 

@@ -29,7 +29,6 @@ this.scene.emitter.on("leftdown",()=>{
 
         this.body.setVelocityX(-200)
     }
-    this.play("run");
 
 })
 this.scene.emitter.on("leftup",()=>{
